@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap Sankey Chart - Category and Class</title>
+
+	<!-- Description of the Web Page -->
+	<meta name="description" content="Bootstrap Sankey Chart - Category e Class">
+	
+	<!-- Keywords for search engines -->
+	<meta name="keywords" content="Google Sankey Chart Bootstrap Class">
+	
+	<!-- Author of the page -->	
+	<meta name="author" content="Cauê Santos">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<!-- div that hold the sankey chart -->
+<div id="sankey_multiple" style="height: 800; width: 3840;"></div>
+
+<script type="text/javascript">
+// Load the Visualization API and the sankey package.	
+google.charts.load("current", {packages:["sankey"]});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+/* Callback that creates and populates a data table,
+ instantiates the sankey chart, passes in the data and
+ draws it. */
+function drawChart() {
+
+	//Create the data table
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'From');
+	data.addColumn('string', 'To');
+	data.addColumn('number', 'Weight');
+	data.addRows([
+				["Tables",".active", 1],
+				["Pagination",".active", 1],
+				["Buttons",".active", 1],
+				["Navbar",".active", 1],
+				["Dropdowns",".active", 1],
+				["Progress Bars",".active", 1],
+				["List Groups",".active", 1],
+				["Affix",".affix", 1],
+				["Alerts",".alert", 1],
+				["Alerts",".alert-danger", 1],
+				["Alerts",".alert-dismissible", 1],
+				["Alerts",".alert-info", 1],
+				["Alerts",".alert-link", 1],
+				["Alerts",".alert-success", 1],
+				["Alerts",".alert-warning", 1],
+				["Badges",".badge", 1],
+				["Helpers",".bg-danger", 1],
+				["Helpers",".bg-info", 1],
+				["Helpers",".bg-primary", 1],
+				["Helpers",".bg-success", 1],
+				["Helpers",".bg-warning", 1],
+				["Pagination",".breadcrumb", 1],
+				["Buttons",".btn", 1],
+				["Buttons",".btn-block", 1],
+				["Buttons",".btn-danger", 1],
+				["Buttons",".btn-default", 1],
+				["Button Groups",".btn-group", 1],
+				["Button Groups",".btn-group-justified", 1],
+				["Button Groups",".btn-group-lg", 1],
+				["Button Groups",".btn-group-sm", 1],
+				["Button Groups",".btn-group-vertical", 1],
+				["Button Groups",".btn-group-xs", 1],
+				["Buttons",".btn-info", 1],
+				["Buttons",".btn-lg", 1],
+				["Buttons",".btn-link", 1],
+				["Buttons",".btn-primary", 1],
+				["Buttons",".btn-sm", 1],
+				["Buttons",".btn-success", 1],
+				["Buttons",".btn-warning", 1],
+				["Buttons",".btn-xs", 1],
+				["Images",".caption", 1],
+				["Dropdowns",".caret", 1],
+				["Carousel",".carousel", 1],
+				["Carousel",".carousel-caption", 1],
+				["Carousel",".carousel-control", 1],
+				["Carousel",".carousel-indicators", 1],
+				["Carousel",".carousel-inner", 1],
+				["Helpers",".center-block", 1],
+				["Inputs",".checkbox", 1],
+				["Inputs",".checkbox-inline", 1],
+				["Helpers",".clearfix", 1],
+				["Helpers",".close", 1],
+				["Grid",".col-*-*", 1],
+				["Grid",".col-*-offset-*", 1],
+				["Grid",".col-*-pull-*", 1],
+				["Grid",".col-*-push-*", 1],
+				["Collapse",".collapse", 1],
+				["Collapse",".collapse in", 1],
+				["Containers",".container", 1],
+				["Containers",".container-fluid", 1],
+				["Forms",".control-label", 1],
+				["Tables",".danger", 1],
+				["Buttons",".disabled", 1],
+				["Dropdowns",".disabled", 1],
+				["List Groups",".disabled", 1],
+				["Pagination",".disabled", 1],
+				["Dropdowns",".divider", 1],
+				["Typography",".dl-horizontal", 1],
+				["Dropdowns",".dropdown", 1],
+				["Dropdowns",".dropdown-header", 1],
+				["Dropdowns",".dropdown-menu", 1],
+				["Dropdowns",".dropdown-menu-right", 1],
+				["Dropdowns",".dropdown-toggle", 1],
+				["Dropdowns",".dropup", 1],
+				["Images",".embed-responsive", 1],
+				["Images",".embed-responsive-16by9", 1],
+				["Images",".embed-responsive-4by3", 1],
+				["Images",".embed-responsive-item", 1],
+				["Alerts",".fade", 1],
+				["Forms",".form-control", 1],
+				["Inputs 2",".form-control-feedback", 1],
+				["Inputs 2",".form-control-static", 1],
+				["Forms",".form-group", 1],
+				["Forms",".form-horizontal", 1],
+				["Forms",".form-inline", 1],
+				["Glyphicons",".glyphicon", 1],
+				["Typography",".h1 - .h6", 1],
+				["Forms",".has-danger", 1],
+				["Forms",".has-feedback", 1],
+				["Forms",".has-success", 1],
+				["Forms",".has-warning", 1],
+				["Input Sizing",".help-block", 1],
+				["Helpers",".hidden", 1],
+				["Helpers",".hidden-*", 1],
+				["Helpers",".hidden-print", 1],
+				["Helpers",".hide", 1],
+				["Navbar",".icon-bar", 1],
+				["Carousel",".icon-next", 1],
+				["Carousel",".icon-prev", 1],
+				["Images",".img-circle", 1],
+				["Images",".img-responsive", 1],
+				["Images",".img-rounded", 1],
+				["Images",".img-thumbnail", 1],
+				["Tabs",".in", 1],
+				["Tables",".info", 1],
+				["Typography",".initialism", 1],
+				["Inputs",".input-group", 1],
+				["Inputs",".input-group-addon", 1],
+				["Inputs",".input-group-btn", 1],
+				["Inputs",".input-group-lg", 1],
+				["Inputs",".input-group-sm", 1],
+				["Input Sizing",".input-lg", 1],
+				["Input Sizing",".input-sm", 1],
+				["Helpers",".invisible", 1],
+				["Carousel",".item", 1],
+				["Jumbotron",".jumbotron", 1],
+				["Labels",".label", 1],
+				["Labels",".label-danger", 1],
+				["Labels",".label-info", 1],
+				["Labels",".label-success", 1],
+				["Labels",".label-warning", 1],
+				["Typography",".lead", 1],
+				["Carousel",".left", 1],
+				["List Group",".list-group", 1],
+				["List Group",".list-group-item", 1],
+				["List Group",".list-group-item-danger", 1],
+				["List Group",".list-group-item-heading", 1],
+				["List Group",".list-group-item-info", 1],
+				["List Group",".list-group-item-success", 1],
+				["List Group",".list-group-item-text", 1],
+				["List Group",".list-group-item-warning", 1],
+				["Tabs",".list-inline", 1],
+				["Typography",".list-unstyled", 1],
+				["Typography",".mark", 1],
+				["Media Objects",".media", 1],
+				["Media Objects",".media-body", 1],
+				["Media Objects",".media-heading", 1],
+				["Media Objects",".media-list", 1],
+				["Media Objects",".media-object", 1],
+				["Modals",".modal", 1],
+				["Modals",".modal-body", 1],
+				["Modals",".modal-content", 1],
+				["Modals",".modal-dialog", 1],
+				["Modals",".modal-footer", 1],
+				["Modals",".modal-header", 1],
+				["Modals",".modal-lg", 1],
+				["Modals",".modal-open", 1],
+				["Modals",".modal-sm", 1],
+				["Modals",".modal-title", 1],
+				["Navbar",".nav .navbar-nav", 1],
+				["Tabs",".nav nav-pills", 1],
+				["Tabs",".nav nav-tabs", 1],
+				["Tabs",".nav-justified", 1],
+				["Tabs",".nav-stacked", 1],
+				["Tabs",".nav-tabs", 1],
+				["Navbar",".navbar", 1],
+				["Navbar",".navbar-brand", 1],
+				["Navbar",".navbar-btn", 1],
+				["Navbar",".navbar-collapse", 1],
+				["Navbar",".navbar-default", 1],
+				["Navbar",".navbar-fixed-bottom", 1],
+				["Navbar",".navbar-fixed-top", 1],
+				["Navbar",".navbar-form", 1],
+				["Navbar",".navbar-header", 1],
+				["Navbar",".navbar-inverse", 1],
+				["Navbar",".navbar-left", 1],
+				["Navbar",".navbar-link", 1],
+				["Navbar",".navbar-nav", 1],
+				["Navbar",".navbar-right", 1],
+				["Navbar",".navbar-static-top", 1],
+				["Navbar",".navbar-text", 1],
+				["Navbar",".navbar-toggle", 1],
+				["Carousel",".next", 1],
+				["Pager",".next", 1],
+				["Page Header",".page-header", 1],
+				["Pager",".pager", 1],
+				["Pagination",".pagination", 1],
+				["Pagination",".pagination-lg", 1],
+				["Pagination",".pagination-sm", 1],
+				["Panels",".panel", 1],
+				["Panels",".panel-body", 1],
+				["Collapse",".panel-collapse", 1],
+				["Panels",".panel-danger", 1],
+				["Panels",".panel-footer", 1],
+				["Panels",".panel-group", 1],
+				["Panels",".panel-heading", 1],
+				["Panels",".panel-info", 1],
+				["Panels",".panel-success", 1],
+				["Panels",".panel-title", 1],
+				["Panels",".panel-warning", 1],
+				["Popover",".popover", 1],
+				["Helpers",".pre-scrollable", 1],
+				["Carousel",".prev", 1],
+				["Pager",".previous", 1],
+				["Progress Bars",".progress", 1],
+				["Progress Bars",".progress-bar", 1],
+				["Progress Bars",".progress-bar-danger", 1],
+				["Progress Bars",".progress-bar-info", 1],
+				["Progress Bars",".progress-bar-striped", 1],
+				["Progress Bars",".progress-bar-success", 1],
+				["Progress Bars",".progress-bar-warning", 1],
+				["Helpers",".pull-left", 1],
+				["Helpers",".pull-right", 1],
+				["Carousel",".right", 1],
+				["Grid",".row", 1],
+				["Helpers",".show", 1],
+				["Typography",".small", 1],
+				["Helpers",".sr-only", 1],
+				["Helpers",".sr-only-focusable", 1],
+				["Tables",".success", 1],
+				["Tabs",".tab-content", 1],
+				["Tabs",".tab-pane", 1],
+				["Tables",".table", 1],
+				["Tables",".table-bordered", 1],
+				["Tables",".table-condensed", 1],
+				["Tables",".table-hover", 1],
+				["Tables",".table-responsive", 1],
+				["Typography",".text-capitalize", 1],
+				["Typography",".text-center", 1],
+				["Typography",".text-danger", 1],
+				["Typography",".text-hide", 1],
+				["Typography",".text-info", 1],
+				["Typography",".text-justify", 1],
+				["Typography",".text-left", 1],
+				["Typography",".text-lowercase", 1],
+				["Typography",".text-muted", 1],
+				["Typography",".text-nowrap", 1],
+				["Typography",".text-primary", 1],
+				["Typography",".text-right", 1],
+				["Typography",".text-success", 1],
+				["Typography",".text-uppercase", 1],
+				["Typography",".text-warning", 1],
+				["Images",".thumbnail", 1],
+				["Tooltip",".tooltip", 1],
+				["Helpers",".visible-*", 1],
+				["Helpers",".visible-print-block", 1],
+				["Helpers",".visible-print-inline", 1],
+				["Helpers",".visible-print-inline-block", 1],
+				["Tables",".warning", 1],
+				["Wells",".well", 1],
+				["Wells",".well-lg", 1],
+				["Wells",".well-sm", 1],
+				]);       
+
+  // Sets chart options.
+  var options = {
+    width: 800,
+    height: 3840,
+    sankey: {
+    	//Node options
+      node: {
+      	interactivity: true,
+        width: 20,
+        labelPadding: 8,
+        nodePadding: 3,
+        colors: ['#fff'],
+
+        //Label options
+        label: {
+        	fontName: 'Courier',	
+        	fontSize: 14,
+        	bold: true,
+        },
+      },
+      //Link options
+      link: {	
+        colorMode: 'none',
+        color: '#0f0',	
+        weight: 2,
+      }
+    }
+  };
+
+	// Instantiate and draw our chart, passing in some options.
+	var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+	chart.draw(data, options);
+}
+</script>
+</body>
+</html>
