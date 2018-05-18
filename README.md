@@ -11,4 +11,5 @@ A category/Bootstrap class  sankey chart
 # Organization Charts
 
 A category/Bootstrap class org chart
-![org_chart](https://user-images.githubusercontent.com/34218434/40260625-0279020c-5ad2-11e8-86cb-709ce0b094eb.png)
+![org_chart](https://user-images.githubusercontent.com/34218434/40260709-736ece10-5ad2-11e8-8816-110fda27aea3.png)
+
